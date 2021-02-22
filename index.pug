@@ -1,0 +1,59 @@
+doctype html
+html(lang="zh-tw")
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-compatible' content='ie=edge,chrome=1')
+    meta(name='viewport'
+        content='width=device-width'
+        height='device-height'
+        initial-scale='1'
+        minimum-scale='1'
+        maximum-scale='1'
+        user-scalable='no')
+    title 購物清單計算器
+    meta(name='description' content='購物清單計算器')
+    meta(name='author' content='黃俊傑')
+    link(rel='canonical' href='https://jack842248.github.io/bmi-calc/')
+    link(rel="Shortcut Icon" href="images/favicon.ico")
+    link(rel='stylesheet' type="text/css" href='css/bootstrap.css')
+    link(rel='stylesheet' type="text/css" href='css/all.css')
+    link(rel='stylesheet' type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')
+body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark 
+    .container-fluid.bg-dark
+        .container
+            h1
+                i.fas.fa-shopping-basket  
+                | 購物清單計算器
+            small.text-white(id="status") 狀態:
+            .form-row.d-flex.justify-content-center
+                .col-sm-12.col-md-6.my-2
+                    input.form-control(id="inputItem" type='text' placeholder='請輸入品項' inputmode="numeric")
+                .col-sm-12.col-md-6.my-2
+                    input.form-control(id="inputPrice" type='number' placeholder='請輸入金額' inputmode="numeric")
+                .col-sm-12
+                    button.btn.btn-info.btn-block.calc-btn(id="inputBtn") 新增品項
+            .row
+                .col-12
+                    table.table.table-bordered.table-dark.text-center
+                        thead
+                            tr.bg-secondary.text-center
+                                th(width="15%") 編號
+                                th(width="35%") 商品名稱
+                                th(width="35%") 商品價錢
+                                th(width="15%") 移除
+                        tbody.text-center#list 
+                            tr
+                                td.h5
+                                td.h5
+                                td.h5
+                                td.h5
+                                    span.btn.btn.dark
+                        tfoot.text-center
+                            tr
+                                td.h5.text-right(colspan="2") 總價：
+                                td.h5#total 0
+                                td.h5 $
+    script(src='js/all.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js')
+            
