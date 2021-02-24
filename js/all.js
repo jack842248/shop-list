@@ -54,6 +54,32 @@ function addData(){
 }
 inputBtn.addEventListener("click",addData,false);
 
+//** (按下enter)新增資料 **//
+function keydownaddData(event){
+    if(event.keyCode == "13"){
+        let inputItemVal = inputItem.value;
+        let inputPriceVal = inputPrice.value;
+    
+        if(inputItemVal == ""){
+            alert("請輸入品項");
+        }else if(inputPriceVal == ""){
+            alert("請輸入金額");
+        }else{
+            shoppingList.push({item:inputItemVal,price:inputPriceVal});
+            inputItem.value = "";
+            inputPrice.value = "";
+            upData();
+            list.innerHTML = "";
+            showData();
+            calcTotal();
+            status.textContent = `狀態:你新增了${inputItemVal}`;
+        }
+    }
+}
+body.addEventListener("keydown",keydownaddData,false);
+
+
+
 //** (點擊)刪除資料 **//
 function deleteData(e){
     e.preventDefault();
